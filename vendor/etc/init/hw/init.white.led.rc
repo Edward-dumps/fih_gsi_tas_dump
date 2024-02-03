@@ -1,0 +1,23 @@
+#terry add for LED on Hardware Button TAS-805
+on init
+	setprop ro.white.led.status 1
+
+on boot
+    chown system system /sys/class/leds/red/pattern
+	chown system system /sys/class/leds/red/blink
+	chown system system /sys/class/leds/green/blink
+	chown system system /sys/class/leds/blue/blink
+	chown system system /sys/class/leds/red/brightness
+	chown system system /sys/class/leds/green/brightness
+	chown system system /sys/class/leds/blue/brightness
+	chown system system /sys/class/leds/red/reg
+	chown system system /sys/class/leds/red/enviroment
+	
+on property:sys.led.brightest.val=dark
+    write /sys/class/leds/red/enviroment dark
+
+on property:sys.led.brightest.val=indoor
+    write /sys/class/leds/red/enviroment indoor
+
+on property:sys.led.brightest.val=outdoor
+    write /sys/class/leds/red/enviroment outdoor
