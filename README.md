@@ -1,0 +1,14 @@
+# Taishan_00WW-user 9 PPR1.180610.011 00WW_1_18D release-keys
+- manufacturer: fih
+- platform: sdm660
+- codename: TAS
+- flavor: gsi_sdm660_64_00WW-user
+- release: 9
+- id: PPR1.180610.011
+- incremental: 00WW_1_18D
+- tags: release-keys
+- fingerprint: Nokia/Taishan_00WW/TAS:9/PPR1.180610.011/00WW_1_18D:user/release-keys
+- is_ab: true
+- brand: FIH_GSI
+- branch: Taishan_00WW-user-9-PPR1.180610.011-00WW_1_18D-release-keys
+- repo: fih_gsi_tas_dump

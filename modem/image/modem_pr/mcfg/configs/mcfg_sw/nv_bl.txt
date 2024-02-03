@@ -1,0 +1,12 @@
+10
+441
+946
+850
+1877
+1920
+2954 
+4548
+6828
+6829
+/nv/item_files/modem/mmode/lte_bandpref
+/nv/item_files/modem/mmode/tds_bandpref
