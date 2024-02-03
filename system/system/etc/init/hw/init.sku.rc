@@ -1,0 +1,34 @@
+on fs
+    setprop ro.wifi.channels 11
+    setprop ro.build.product TAS
+    setprop ro.product.device TAS
+    setprop ro.product.brand Nokia
+    setprop ro.product.board SDM660
+    setprop ro.product.locale zh-Hans-WW
+    setprop persist.dsds.enabled true
+    setprop ro.product.model.num 00WW
+    setprop ro.product.name Taishan_00WW
+    setprop persist.anr.block_long_time 3
+    setprop ro.config.dbgcfgtool_config 2
+    setprop persist.anr.block_short_time 1
+    setprop ro.com.android.mobiledata true
+    setprop persist.anr.allow_dump_number 1
+    setprop ro.com.android.dataroaming false
+    setprop ro.product.model.display "TA-1167"
+    setprop ro.product.model "Nokia X71"
+    setprop ro.product.manufacturer "HMD Global"
+    setprop ro.product.nickname "Nokia X71"
+    setprop ro.product.first_api_level 28
+    setprop ro.com.google.clientidbase android-hmd
+    setprop ro.com.google.rlz_ap_whitelist=YH
+    setprop ro.com.google.rlzbrandcode=HMDG
+    setprop setupwizard.feature.deferred_snooze_allow_never true
+    setprop ro.build.imeisv 01
+    setprop ro.sf.lcd_density 420
+on post-fs
+    setprop dalvik.vm.dex2oat-threads 4
+    setprop persist.sys.security_enable false
+    setprop persist.sys.strict_op_enable false
+on fs
+	setprop ro.build.fingerprint Nokia/Taishan_00WW/TAS:9/PPR1.180610.011/00WW_1_18D:user/release-keys
+	setprop ro.build.description "Taishan_00WW-user 9 PPR1.180610.011 00WW_1_18D release-keys"

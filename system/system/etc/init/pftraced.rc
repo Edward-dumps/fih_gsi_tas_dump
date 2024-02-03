@@ -1,0 +1,32 @@
+service pftraced /system/bin/pftraced
+    socket pftraced stream 0660 system system
+    socket pftracede stream 0660 system system
+    socket pftracedr seqpacket 0666 logd logd
+    socket pftracedw dgram+passcred 0222 logd logd
+    user system
+    group logd system package_info readproc
+    writepid /dev/cpuset/system-background/tasks
+
+on post-fs-data
+    mkdir /data/system/pftrace 0770 root system
+    restorecon /data/system/pftrace
+#   start pftraced
+
+on property:persist.sys.pftrace.enabled=true
+    start pftraced
+
+on property:persist.sys.pftrace.enabled=false
+    stop pftraced
+
+on property:sys.pftrace.atrace=start
+    exec u:r:shell:s0 root root -- /system/bin/sh -c "/system/bin/atrace --async_start gfx input view wm am sm audio video camera hal res dalvik rs bionic power pm ss sched freq"
+    setprop sys.pftrace.atrace_state started
+
+on property:sys.pftrace.atrace=stop
+    exec u:r:shell:s0 root system -- /system/bin/sh -c "/system/bin/atrace --async_stop gfx input view wm am sm audio video camera hal res dalvik rs bionic power pm ss sched freq -z -o ${sys.pftrace.atracefile:-/data/system/pftrace/atracefile}"
+    chmod 0660 ${sys.pftrace.atracefile:-/data/system/pftrace/atracefile}
+    setprop sys.pftrace.atrace_state stopped
+
+on property:sys.pftrace.atrace=drop
+    exec - system root -- /system/bin/atrace --async_stop -o /dev/null
+    setprop sys.pftrace.atrace_state started
