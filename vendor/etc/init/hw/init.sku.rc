@@ -1,0 +1,11 @@
+on fs
+    setprop ro.product.vendor.brand Nokia
+    setprop ro.product.vendor.name Taishan_00WW
+    setprop ro.product.vendor.device TAS
+    setprop ro.product.vendor.model "Nokia X71"
+    setprop ro.product.vendor.manufacturer "HMD Global"
+    setprop ro.build.imeisv 01
+    setprop ro.sf.lcd_density 420
+    setprop vendor.display.lcd_density 420
+  on fs
+	setprop ro.vendor.build.fingerprint Nokia/Taishan_00WW/TAS:9/PPR1.180610.011/00WW_1_18J:user/release-keys
